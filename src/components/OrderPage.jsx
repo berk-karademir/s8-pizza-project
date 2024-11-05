@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 //https://reactstrap.github.io/?path=/docs/components-forms--input
 export default function Order() {
+  //stateler buraya
    return (
     <>
    <div>
@@ -11,7 +12,7 @@ export default function Order() {
         <main>
           <div>
             <h2>Position Absolute Acı Pizza</h2>
-            <p>89.90 <span>4.9 (200)</span></p>
+            <p> ₺90 <span>4.9 (200)</span></p>
             <p>Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir.</p>
            </div>
            
@@ -56,19 +57,19 @@ export default function Order() {
         <Input
           type="radio"
           name="sizeSelect"
-          id="small"
-          value="small"
+          id="XLarge"
+          value="XLarge"
           checked={""}
           onChange={""}
         />
-        <Label htmlFor="small" >Small</Label>
+        <Label htmlFor="XLarge" >X Large</Label>
     </FormGroup>
 
 
 {/*------------------     DOUGH SELECT       ------------------------*/ }
     <FormGroup>
         <Label htmlFor="doughSelect">Select dough</Label>
-        <Input type="select" name="dough" id="dough"  value={""} onChange={""}>
+        <Input type="select" name="doughSelect" id="dough"  value={""} onChange={""}>
           
           <option value="XThinDough">Extra Thin</option>
           <option value="ThinDough">Thin</option>
@@ -80,7 +81,7 @@ export default function Order() {
 {/*------------------     CRUST SELECT       ------------------------*/ }
       <FormGroup>
         <Label htmlFor="crustSelect">Select crust</Label>
-        <Input type="select" name="crust" id="crust"  value={""} onChange={""}>
+        <Input type="select" name="crustSelect" id="crust"  value={""} onChange={""}>
           
           <option value="XThinCrust">Extra Thin</option>
           <option value="ThinCrust">Thin</option>
@@ -369,7 +370,7 @@ export default function Order() {
   </div>
   <div>
     Total Price
-    <p>Extra Selections {"toppings+sauce toplamları"}</p>
+    <p>Extra Selections {"dinamik toppings+sauce toplamları tutarı"}</p>
     <p>Grand Total:</p>
   <Button type='submit'>Place Order</Button>
   </div>
