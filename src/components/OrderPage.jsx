@@ -9,10 +9,11 @@ export default function Order() {
     <span>Anasayfa &gt; Sipariş Oluştur</span>
   </div>
         <main>
-          <h2>Position Absolute Acı Pizza</h2>
-           <p>89.90 <span>4.9</span></p>
-           <p>Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir.</p>
-           
+          <div>
+            <h2>Position Absolute Acı Pizza</h2>
+            <p>89.90 <span>4.9 (200)</span></p>
+            <p>Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir.</p>
+           </div>
            
   <Form>
     <FormGroup>
@@ -93,8 +94,7 @@ export default function Order() {
 
 {/*------------------     TOPPINGS SELECT       ------------------------*/ }
       <FormGroup >
-      Toppings
-      <span>Maximum 10 toppings. 5₺</span>
+        <p>Toppings - Choose up to 10 ($5 each)</p>
         <Label htmlFor='toppingSelect'>
         <Input
         type='checkbox'
@@ -264,6 +264,91 @@ export default function Order() {
         </Label>
 
       </FormGroup>
+{/*------------------    EXTRA SAUCES      --------------------*/ }
+    <FormGroup>
+      <p>Extra Sauces ($1.90 each)</p>
+      <Label htmlFor='extraSauces'>
+        <Input
+        type='checkbox'
+        name='extraSauces'
+        value={"ketchup"}
+        onChange={""}
+        checked={""}
+        />
+        Ketchup
+      </Label>
+
+      <Label htmlFor='extraSauces'>
+        <Input
+        type='checkbox'
+        name='extraSauces'
+        value={"mayonnaise"}
+        onChange={""}
+        checked={""}
+        />
+        Mayonnaise
+      </Label>
+
+      <Label htmlFor='extraSauces'>
+        <Input
+        type='checkbox'
+        name='extraSauces'
+        value={"garlicMayonnaise"}
+        onChange={""}
+        checked={""}
+        />
+        Garlic Mayonnaise
+      </Label>
+
+      <Label htmlFor='extraSauces'>
+        <Input
+        type='checkbox'
+        name='extraSauces'
+        value={"ranch"}
+        onChange={""}
+        checked={""}
+        />
+        Ranch
+      </Label>
+
+      <Label htmlFor='extraSauces'>
+        <Input
+        type='checkbox'
+        name='extraSauces'
+        value={"chiliSauce"}
+        onChange={""}
+        checked={""}
+        />
+        Chili
+      </Label>
+
+
+      <Label htmlFor='extraSauces'>
+        <Input
+        type='checkbox'
+        name='extraSauces'
+        value={"BBQSauce"}
+        onChange={""}
+        checked={""}
+        />
+        BBQ Sauce
+      </Label>
+
+
+      <Label htmlFor='extraSauces'>
+        <Input
+        type='checkbox'
+        name='extraSauces'
+        value={"buffalo"}
+        onChange={""}
+        checked={""}
+        />
+        Buffalo Sauce
+      </Label>
+
+      </FormGroup>
+
+
 {/*------------------    ORDER NOTES      ------------------------*/ }
       <FormGroup>
     <Label htmlFor="orderNotes">
@@ -277,6 +362,17 @@ export default function Order() {
     />
      </Label>
   </FormGroup>
+  <div>
+  <Button>- Butonu</Button>
+  <span>Dinamik ürün adedi buraya gelecek</span>
+  <Button>+ Butonu</Button>
+  </div>
+  <div>
+    Total Price
+    <p>Extra Selections {"toppings+sauce toplamları"}</p>
+    <p>Grand Total:</p>
+  <Button type='submit'>Place Order</Button>
+  </div>
 </Form>
         
 
