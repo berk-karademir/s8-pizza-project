@@ -22,22 +22,39 @@ export default function Order() {
   const changeHandler = (event) => {
     const { name, value, type, checked } = event.target;
     const updatedData = { ...formData };
-    
+  
     if (type === "checkbox") {
       if (name === "toppingSelect") {
-        updatedData.toppings = checked ? [...formData.toppings, value] : formData.toppings.filter(item => item !== value);
-        //console.log("an 'optinal' selected: >>>", updatedData)
-      } else if (name === "extraSauces") {
-        updatedData.extraSauces = checked ? [...formData.extraSauces, value] : formData.extraSauces.filter(item => item !== value);
-        //console.log("an 'optinal' selected: >>>", updatedData)
+        if (checked) {
+          if (formData.toppings.length < 10) {
+            updatedData.toppings = [...formData.toppings, value];
+            console.log("a topping checked >>>", updatedData)
+          } else {
+            alert("You can select up to 10 toppings only.");
+            return;
+          }
+        } else {
+          updatedData.toppings = formData.toppings.filter(item => item !== value);
+          console.log("a topping unchecked >>>", updatedData)
+        }
+      } else {
+        // Klasik if-else ile extraSauces kontrolü
+        if (name === "extraSauces") {
+          if (checked) {
+            updatedData.extraSauces = [...formData.extraSauces, value];
+            console.log("a sauce checked >>>", updatedData)
+          } else {
+            updatedData.extraSauces = formData.extraSauces.filter(item => item !== value);
+            console.log("a sauce unchecked >>>", updatedData)
+          }
+        }
       }
     } else {
       updatedData[name] = value;
-      console.log("a 'must' selection or order note updated: >>>" ,updatedData)
+      console.log("a 'must' field / order note updated ", updatedData)
     }
-
+  
     setFormData(updatedData);
-    
   };
 
   const updateQuantity = (change) => {
@@ -48,7 +65,7 @@ export default function Order() {
 
   const resetHandler = () => {
     setFormData(initValues)
-    console.log("All selections is resetted.")
+    console.log("All selections are resetted.")
   }
 
   const submitHandler = (event) => {
