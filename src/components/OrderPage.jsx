@@ -33,7 +33,7 @@ export default function Order() {
       }
     } else {
       updatedData[name] = value;
-      console.log("a 'must' selection or order notes updated: >>>" ,updatedData)
+      console.log("a 'must' selection or order note updated: >>>" ,updatedData)
     }
 
     setFormData(updatedData);
@@ -51,6 +51,14 @@ export default function Order() {
     console.log("All selections is resetted.")
   }
 
+  const submitHandler = (event) => {
+    event.preventDefault();
+    // axios POST ???!! and navigate to success("We took your order") ??! page
+    // useHistory ???!
+    console.log("Form submitted: ", formData);
+
+  };
+
   const toppingsCost = formData.toppings.length * 5;
   const saucesCost = formData.extraSauces.length * 2;
   const totalCost = (30 + toppingsCost + saucesCost) * formData.quantity;
@@ -59,7 +67,7 @@ export default function Order() {
 
   return (
     <>
-      <div>
+      <div >
         <h1> Teknolojik Yemekler</h1>
         <span>Anasayfa &gt; Sipariş Oluştur</span>
       </div>
@@ -67,12 +75,12 @@ export default function Order() {
         <div>
           <h2>Position Absolute Pizza</h2>
           <p> $30 <span>4.9 (200)</span></p>
-          <p>Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre...</p>
+          <p>Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. . Küçük bir pizzaya bazen pizzetta denir.</p>
         </div>
         
-        <Form>
+        <Form onSubmit={submitHandler}>
           <FormGroup>
-            <Label htmlFor="sizeSelect">Select size</Label>
+            <Label htmlFor="sizeSelect">Select size*</Label>
             {sizes.map(size => (
               <div key={size}>
                 <Input
@@ -89,7 +97,7 @@ export default function Order() {
           </FormGroup>
 
           <FormGroup>
-            <Label htmlFor="doughSelect">Select dough</Label>
+            <Label htmlFor="doughSelect">Select dough*</Label>
             <Input
               type="select"
               name="dough"
@@ -105,7 +113,7 @@ export default function Order() {
           </FormGroup>
 
           <FormGroup>
-            <Label htmlFor="crustSelect">Select crust</Label>
+            <Label htmlFor="crustSelect">Select crust*</Label>
             <Input
               type="select"
               name="crust"
@@ -119,7 +127,8 @@ export default function Order() {
               ))}
             </Input>
           </FormGroup>
-
+              {!isFormValid && <p>*You must select size, dough and crust!</p>}
+             
           <FormGroup>
             <p>Toppings - Choose up to 10 ($5 each)</p>
             {toppings.map(topping => (
