@@ -1,0 +1,139 @@
+/* ------ MOBILE FIRST STYLING ------- */
+:root {
+    --primary-red: #CE2829;
+    --primary-gray: #5F5F5F;
+    --primary-yellow: #FDC913;
+    --flat-black: #000000;
+    --flat-white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Barlow";
+}
+
+header {
+    color: var(--flat-white);
+    background-color:  var(--primary-red);
+    min-height: 10rem;
+    font-size: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header div {
+
+    h1 {
+        font-family:"Londrina Solid";
+    }
+
+    span {
+        font-family: "Barlow";
+    }
+}
+
+main {
+    font-family: "Barlow";
+    padding: 1rem 3rem;
+}
+
+.production-content {
+    h2 {
+        font-weight: 600;
+    }
+
+    p {
+        display: flex;
+        justify-content: space-between;
+        color: var(--primary-gray);
+    }
+
+    span {
+        color: var(--flat-black);
+        font-weight: 700;
+    }
+}
+
+.production-content p:last-of-type {
+    text-indent: 1rem;
+  } 
+
+    .label-headings {
+        font-weight: 600;
+    }
+
+    .warning-message {
+        color: var(--primary-red);
+        font-style: var(--primary-red);
+        font-weight: 600;
+    }
+
+    .italic-span {
+        font-style: italic;
+        font-weight: normal;
+    }
+
+    textarea {
+       border: 1px solid var(--primary-gray);
+       min-width: 100%;
+    }
+
+    .bottom-border-line {
+        border-top: 1px solid var(--primary-gray);
+        opacity: 70%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .costs-container {
+        border: 1px solid rgba(128, 128, 128, 0.575);
+        border-radius: 5px;
+        padding: 2rem 0 2rem 2rem;
+    }
+
+    .grand-total {
+        font-size: larger;
+        color: var(--primary-red);
+        font-weight: 600;
+    }
+
+    .quantity-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .order-btns {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2rem 0;
+    
+        button {
+            background-color: var(--primary-yellow);
+            color: var(--flat-black);
+            font-weight: 600;
+            border: none;
+            padding: 0.5rem 1.5rem; 
+        }
+    
+        span {
+            font-weight: 700;
+            display: flex; 
+            align-items: center; 
+            
+        }
+    }
+
+    .reset-btn {
+        width: 100%;
+        background-color: var(--primary-red);
+        font-weight: 600;
+        border: none;
+        padding: 0.5rem 0;
+    }
+    
