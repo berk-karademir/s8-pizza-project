@@ -118,7 +118,7 @@ textarea {
     display: flex;
     align-items: center;
 }
-      
+
 .order-btns {
     display: flex;
     justify-content: space-between;
@@ -168,11 +168,16 @@ textarea {
 
 .order-btns .place-order-btn:not(:disabled) {
     background-color: green; 
-    color: var(--flat-white); 
+    color: var(--flat-white);
+    font-weight: 600;
+    border: none;
+    padding: 0.5rem 1.5rem
+
 }
 .order-btns .place-order-btn:not(:disabled):active {
     transform: scale(1.1);
     transition: transform 0.2s ease;
+    
 }
     
 span {
@@ -311,6 +316,7 @@ span {
             padding: 0.8rem 2rem;
             font-size: 1.2rem;
             font-weight: 700;
+            border: none;
         }
 
         span {
