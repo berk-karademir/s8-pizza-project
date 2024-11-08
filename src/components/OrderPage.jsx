@@ -11,6 +11,7 @@ export default function Order({ setOrderStatus }) {
     extraSauces: [],
     orderNotes: "",
     quantity: 1,
+    fastDelivery: false,
   }
   const [formData, setFormData] = useState(initValues)
 
@@ -47,6 +48,8 @@ export default function Order({ setOrderStatus }) {
             updatedData.extraSauces = formData.extraSauces.filter(item => item !== value);
             //console.log("a sauce unchecked >>>", updatedData)
           }
+        } else if (name==="fastDelivery") {
+          updatedData.fastDelivery = checked
         }
       }
     } else {
@@ -83,9 +86,11 @@ export default function Order({ setOrderStatus }) {
       });
   };
 
-  const toppingsCost = formData.toppings.length * 5;
-  const saucesCost = formData.extraSauces.length * 2;
-  const totalCost = (30 + toppingsCost + saucesCost) * formData.quantity;
+  const toppingsCost = formData.toppings.length * 5 * formData.quantity; 
+  const saucesCost = formData.extraSauces.length * 2 * formData.quantity; 
+  const fastDeliveryCost = formData.fastDelivery ? 5 : 0;
+  const mainCost = 30 * formData.quantity; 
+  const totalCost = mainCost + toppingsCost + saucesCost + fastDeliveryCost; 
 
   const isFormValid = formData.size && formData.dough && formData.crust;
 
@@ -208,13 +213,26 @@ export default function Order({ setOrderStatus }) {
               />
             </Label>
           </FormGroup>
+
+          <FormGroup>
+            <Label htmlFor='fastDelivery' className='label-headings'>
+              <Input
+                type="checkbox"
+                name="fastDelivery"
+                checked={formData.fastDelivery}
+                onChange={changeHandler}
+              />  
+              I want fast delivery. <span className='italic-span'> (5$)</span>
+            </Label>
+          </FormGroup>
+
         <br />
         <p className='bottom-border-line' ></p>
         <br />
 
           <div className='costs-container'>
-          <p className='label-headings'>Main cost: ${formData.quantity*30}</p>
-            <p className='label-headings'>Extra Selections: ${(toppingsCost + saucesCost) * formData.quantity}</p>
+            <p className='label-headings'>Main cost: ${formData.quantity*30}</p>
+            <p className='label-headings'>Extra Selections: ${(toppingsCost + saucesCost + fastDeliveryCost)}</p>
             <p className='grand-total'>Grand Total: ${totalCost}</p>
           </div>
           
