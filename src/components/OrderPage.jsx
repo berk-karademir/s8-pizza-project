@@ -163,7 +163,7 @@ export default function Order({ setOrderStatus }) {
               {!isFormValid && <p className='warning-message'>*You must select size, dough and crust!</p>}
         <br />     
           <FormGroup>
-            <p className='label-headings' >Extra Toppings
+            <p className='label-headings'>Extra Toppings
               <span className='italic-span'> (Choose up to 10 - $5 each)</span></p>
             <div className='toppings'>
             {toppings.map(topping => (

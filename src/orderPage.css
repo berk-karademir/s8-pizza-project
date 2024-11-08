@@ -239,6 +239,7 @@ span {
       font-size: 1.2rem;
       text-align: center;
       display: flex;
+      width: 100vw;
     }
   
 
@@ -246,7 +247,7 @@ span {
       display: flex;
       flex-direction: column; 
       align-items: center;
-      max-width: 1000px;
+      max-width: 700px;
       margin: auto;
       padding: 2rem;
     }
@@ -301,13 +302,13 @@ span {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 2rem 0;
+
         .minus-btn, .plus-btn {
             padding: 1rem 3rem;
         }
 
         .place-order-btn {
-            padding: 1rem 5rem;
+            padding: 0.8rem 2rem;
             font-size: 1.2rem;
             font-weight: 700;
         }
@@ -321,6 +322,7 @@ span {
 
   .reset-btn {
     font-size: 1.2rem;
+    padding: 1rem 0;
   }
 
   .reset-btn:hover {
