@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import  '/src/orderPage.css'
-export default function Order() {
+import axios from 'axios';
+export default function Order({ setOrderStatus }) {
   const initValues = {
     size: "",
     dough: "",
@@ -28,29 +29,29 @@ export default function Order() {
         if (checked) {
           if (formData.toppings.length < 10) {
             updatedData.toppings = [...formData.toppings, value];
-            console.log("a topping checked >>>", updatedData)
+            //console.log("a topping checked >>>", updatedData)
           } else {
             alert("You can select up to 10 toppings only.");
             return;
           }
         } else {
           updatedData.toppings = formData.toppings.filter(item => item !== value);
-          console.log("a topping unchecked >>>", updatedData)
+          //console.log("a topping unchecked >>>", updatedData)
         }
       } else {
         if (name === "extraSauces") {
           if (checked) {
             updatedData.extraSauces = [...formData.extraSauces, value];
-            console.log("a sauce checked >>>", updatedData)
+            //console.log("a sauce checked >>>", updatedData)
           } else {
             updatedData.extraSauces = formData.extraSauces.filter(item => item !== value);
-            console.log("a sauce unchecked >>>", updatedData)
+            //console.log("a sauce unchecked >>>", updatedData)
           }
         }
       }
     } else {
       updatedData[name] = value;
-      console.log("a 'must' field / order note updated ", updatedData)
+      //console.log("a 'must' field / order note updated ", updatedData)
     }
   
     setFormData(updatedData);
@@ -60,20 +61,26 @@ export default function Order() {
     //Math.max(aralığın en küçük sayısı, en büyük sayısı)
     const newQuantity = Math.max(1, formData.quantity + change);
     setFormData({ ...formData, quantity: newQuantity });
-    console.log("Pizza quantity changed: new quantity is =>", newQuantity)
+    //console.log("Pizza quantity changed: new quantity is =>", newQuantity)
   };
 
   const resetHandler = () => {
     setFormData(initValues)
-    console.log("All selections are resetted.", formData)
+    //console.log("All selections are resetted.", formData)
   }
 
   const submitHandler = (event) => {
     event.preventDefault();
-    // axios POST ???!! and navigate to success("We took your order") ??! page
-    // useHistory ???!
-    console.log("Form submitted: ", formData);
 
+    axios.put('https://reqres.in/api/pizza', formData)
+      .then((response) => {
+        console.log('Form submitted successfully:', response);
+        setOrderStatus('success');
+      })
+      .catch((error) => {
+        console.error('There was an error submitting the form:', error);
+        setOrderStatus('error'); 
+      });
   };
 
   const toppingsCost = formData.toppings.length * 5;
