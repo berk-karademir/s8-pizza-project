@@ -99,7 +99,7 @@ export default function Order({ setOrderStatus }) {
     <header>
       <div>
         <h1> Teknolojik Yemekler</h1>
-        <span>Anasayfa &gt; <strong>Sipariş Oluştur</strong></span>
+        <span> Anasayfa &gt; <strong> &nbsp; Sipariş Oluştur</strong></span>
       </div>
       </header>
       <main>
@@ -210,7 +210,7 @@ export default function Order({ setOrderStatus }) {
                 name="orderNotes"
                 type="textarea"
                 rows="5"
-                cols="70"
+                cols="90"
                 placeholder="Would you like to add any notes to your order?"
                 value={formData.orderNotes}
                 onChange={changeHandler}
@@ -241,9 +241,9 @@ export default function Order({ setOrderStatus }) {
           </div>
           
           <div className='order-btns'>
-            <Button onClick={() => updateQuantity(-1)}>-</Button>
+            <Button className="minus-btn" onClick={() => updateQuantity(-1)}>-</Button>
             <span>{formData.quantity}</span>
-            <Button onClick={() => updateQuantity(1)}>+</Button>
+            <Button className="plus-btn"  onClick={() => updateQuantity(1)}>+</Button>
             <Button className="place-order-btn"disabled={!isFormValid}>Place Order</Button>
           </div>
 
