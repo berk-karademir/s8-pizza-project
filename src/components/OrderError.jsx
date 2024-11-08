@@ -1,8 +1,12 @@
 export default function OrderError() {
     return (
-      <div>
-        <h1>An error has occurred with your order, please try again.</h1>
-        <a href="./index.html">Order Page</a>
+      <div className="order-result">
+        <h1>Teknolojik Yemekler</h1>
+        <p>An error has occured, please try again! 
+          <br />
+          <a href="./index.html">Go to order page</a>
+        </p>
+        
       </div>
     );
   }

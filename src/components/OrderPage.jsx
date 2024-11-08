@@ -81,7 +81,7 @@ export default function Order({ setOrderStatus }) {
         setOrderStatus('success');
       })
       .catch((error) => {
-        console.error('There was an error submitting the form:', error);
+        console.warn('There was an error submitting the form:', error);
         setOrderStatus('error'); 
       });
   };
@@ -165,6 +165,7 @@ export default function Order({ setOrderStatus }) {
           <FormGroup>
             <p className='label-headings' >Extra Toppings
               <span className='italic-span'> (Choose up to 10 - $5 each)</span></p>
+            <div className='toppings'>
             {toppings.map(topping => (
               <Label key={topping}
               className='toppings'
@@ -179,10 +180,12 @@ export default function Order({ setOrderStatus }) {
                 {topping}
               </Label>
             ))}
+            </div>
           </FormGroup>
           <br />
           <FormGroup>
             <p className='label-headings'>Extra Sauces <span className='italic-span'>($2 each)</span></p>
+            <div className='extra-sauces'>
             {sauceOptions.map(sauce => (
               <Label key={sauce}>
                 <Input
@@ -195,6 +198,7 @@ export default function Order({ setOrderStatus }) {
                 {sauce}
               </Label>
             ))}
+            </div>
           </FormGroup>
 
           <FormGroup>

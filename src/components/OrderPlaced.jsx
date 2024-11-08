@@ -1,7 +1,10 @@
 export default function OrderPlaced() {
     return (
-      <div>
-        <h1>Your order has been placed successfully!</h1>
+      <div className="order-result">
+        <h1>Teknolojik Yemekler</h1>
+        <p>We took your order successfully. <br />
+            Our moto-courier will contact you soon.
+        </p>
       </div>
     );
   }
