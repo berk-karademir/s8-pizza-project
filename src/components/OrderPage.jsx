@@ -217,7 +217,7 @@ export default function Order({ setOrderStatus }) {
               />
             </Label>
           </FormGroup>
-
+          <br />
           <FormGroup>
             <Label htmlFor='fastDelivery' className='label-headings'>
               <Input

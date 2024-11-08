@@ -65,8 +65,8 @@ main {
 
   .toppings, .extra-sauces {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
-    gap: 10px; /* Add space between checkboxes */
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
   
   .toppings label, .extra-sauces label {
