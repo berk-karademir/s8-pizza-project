@@ -233,17 +233,18 @@ span {
 }
 
 .footer-container {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   border-top: 1px solid var(--primary-gray);
+    background-color:beige;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid var(--primary-gray);
 }
 
 .home-page {
     background-image: url(/Assets/Iteration-1-assets/home-banner.png);
     width: 100vw;
     height: 100vh;
-    padding-top: 5rem;
+    padding-top: 2rem;
     text-align: center;
     display: flex;
     flex-direction: column;
