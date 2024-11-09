@@ -238,6 +238,38 @@ span {
    align-items: center;
    border-top: 1px solid var(--primary-gray);
 }
+
+.home-page {
+    background-image: url(/Assets/Iteration-1-assets/home-banner.png);
+    width: 100vw;
+    height: 100vh;
+    padding-top: 5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    h1 {
+        font-family:"Londrina Solid";
+        color: var(--flat-white);
+        letter-spacing: 2px;
+        padding-bottom: 2rem;
+        font-size: 3rem;
+    }
+    p {
+        font-family: "Roboto Condensed";
+        color: var(--flat-white);
+        font-weight: 300;
+        font-size: 6rem;
+        line-height: 7rem;
+    }
+
+    button {
+        background-color: var(--primary-yellow);
+        border-radius: 2rem;
+        padding: 0.5rem 2rem;
+    }
+}
     /* ------ DESKTOP DEVICES ------ */
 
 @media screen and (min-width: 768px) {

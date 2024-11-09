@@ -5,14 +5,18 @@ import Order from './components/OrderPage.jsx'
 import OrderSuccess from './components/OrderPlaced.jsx';
 import OrderFailure from './components/OrderError.jsx';
 import Footer from './components/Footer.jsx';
+import Home from './components/Home.jsx';
 
 function App() {
-
-  const [orderStatus, setOrderStatus] = useState(null)
+  const [currentPage, setCurrentPage] = useState("home");
+  const [orderStatus, setOrderStatus] = useState(null);
+  
 
   return (
     <>
-      {orderStatus === 'success' ? (
+      {currentPage === "home" ? (
+        <Home navOrder={() => setCurrentPage("order")} />
+      ) : orderStatus === 'success' ? (
         <OrderSuccess />
       ) : orderStatus === 'error' ? (
         <OrderFailure />
@@ -24,4 +28,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
