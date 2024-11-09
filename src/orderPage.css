@@ -254,7 +254,7 @@ span {
         font-family:"Londrina Solid";
         color: var(--flat-white);
         letter-spacing: 2px;
-        padding-bottom: 2rem;
+        padding-bottom: 1rem;
         font-size: 3rem;
     }
     p {
