@@ -253,7 +253,6 @@ export default function Order({ setOrderStatus }) {
             <br />
         </Form>
       </main>
-      
     </>
   );
 }

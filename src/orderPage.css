@@ -14,6 +14,7 @@
 
 body {
     font-family: "Barlow";
+    overflow-x: hidden;
 }
 
 header {
@@ -235,6 +236,7 @@ span {
    display: flex;
    flex-direction: column;
    align-items: center;
+   border-t: 0.1px solid var(--primary-gray);
 }
     /* ------ DESKTOP DEVICES ------ */
 
@@ -283,7 +285,7 @@ span {
   
     .form-container {
       width: 100%;
-      padding: 3rem 5rem 0 5rem;
+      padding: 3rem 5rem 2rem 5rem;
       border: 1px solid var(--primary-gray);
       border-radius: 10px;
     }
@@ -347,12 +349,12 @@ span {
   .toppings label, .extra-sauces label {
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* Space between checkbox and label text */
+    gap: 0.5rem;
 }
 .checkbox-container {
     display: flex;
     align-items: center;
-    margin-bottom: 4px; /* Her bir satır için boşluk */
+    margin-bottom: 4px; 
 }
 .footer-container {
     display: flex;
@@ -360,5 +362,6 @@ span {
     justify-content: center;
     width: 100vw;
     gap: 1rem;
+    border: none;
  }
 }
