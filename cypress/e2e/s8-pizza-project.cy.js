@@ -1,5 +1,17 @@
+
+beforeEach(() => {
+  // browser with a 1080p monitor
+  cy.viewport(1920, 1080) })
+
+ /* beforeEach(() => {
+    // iPhone 14 Pro Max Landscape
+    cy.viewport(932, 430) }) */
+
+/* beforeEach(() => {
+    // iPhone 14 Pro Max Vertical
+    cy.viewport(430, 932) }) */
 describe('Home Page Tests', () => {
-  
+
   it('Loads the home page correctly.', () => {
     
     cy.visit('http://localhost:5173/')
