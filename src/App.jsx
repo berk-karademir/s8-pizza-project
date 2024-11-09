@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import Order from './components/OrderPage.jsx'
 import OrderSuccess from './components/OrderPlaced.jsx';
 import OrderFailure from './components/OrderError.jsx';
-import { useState } from 'react';
+import Footer from './components/Footer.jsx';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       ) : (
         <Order setOrderStatus={setOrderStatus} />
       )}
+      <Footer/>
     </>
   );
 }

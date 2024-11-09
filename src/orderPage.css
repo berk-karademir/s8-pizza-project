@@ -231,6 +231,11 @@ span {
     }
 }
 
+.footer-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
     /* ------ DESKTOP DEVICES ------ */
 
 @media screen and (min-width: 768px) {
@@ -325,6 +330,10 @@ span {
             align-items: center; 
         }
   }
+  .order-btns .place-order-btn:not(:disabled) {
+    border: none;
+    padding: 0.8rem 1.5rem
+}
 
   .reset-btn {
     font-size: 1.2rem;
@@ -335,4 +344,21 @@ span {
     background-color: var(--primary-red);
     transition: transform 0.6s ease;
   }
+  .toppings label, .extra-sauces label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between checkbox and label text */
+}
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px; /* Her bir satır için boşluk */
+}
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+    gap: 1rem;
+ }
 }

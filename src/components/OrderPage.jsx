@@ -165,22 +165,22 @@ export default function Order({ setOrderStatus }) {
           <FormGroup>
             <p className='label-headings'>Extra Toppings
               <span className='italic-span'> (Choose up to 10 - $5 each)</span></p>
-            <div className='toppings'>
-            {toppings.map(topping => (
-              <Label key={topping}
-              className='toppings'
-              >
-                <Input
-                  type="checkbox"
-                  name="toppingSelect"
-                  value={topping}
-                  onChange={changeHandler}
-                  checked={formData.toppings.includes(topping)}
-                />
-                {topping}
-              </Label>
-            ))}
-            </div>
+            <div className="toppings">
+  {toppings.map(topping => (
+    <div key={topping} className="checkbox-container">
+      <Label>
+        <Input
+          type="checkbox"
+          name="toppingSelect"
+          value={topping}
+          onChange={changeHandler}
+          checked={formData.toppings.includes(topping)}
+        />
+        {topping}
+      </Label>
+    </div>
+  ))}
+</div>
           </FormGroup>
           <br />
           <FormGroup>
@@ -251,9 +251,9 @@ export default function Order({ setOrderStatus }) {
             <Button className="reset-btn" type='reset' onClick={resetHandler}>Clear all selections</Button>
           </div>
             <br />
-          
         </Form>
       </main>
+      
     </>
   );
 }
