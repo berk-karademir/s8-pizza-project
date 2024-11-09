@@ -12,7 +12,7 @@ beforeEach(() => {
     cy.viewport(430, 932) }) */
 describe('Home Page Tests', () => {
 
-  it('Loads the home page correctly.', () => {
+  it('Should loads the home page correctly.', () => {
     
     cy.visit('http://localhost:5173/')
   });
@@ -33,7 +33,7 @@ describe('Home Page Tests', () => {
 });
 describe('Order Page Tests', () => {
   
-  it("Navigate to order page correctly.", () => {
+  it("Should navigate to order page correctly.", () => {
     cy.visit('http://localhost:5173/'); 
     cy.get('button') 
       .contains("I'M HUNGRY") 
@@ -65,9 +65,6 @@ describe('Order Page Tests', () => {
 
     cy.get('button.place-order-btn').should('not.be.disabled');
   });
-})
-
-describe('Total Price Calculation', () => {
 
   it('Should calculate the total price correctly for 1 pizza, 1 extra topping, 1 extra sauce, and fast delivery. They should cost $ 42.', () => {
     cy.visit('http://localhost:5173/')
@@ -96,9 +93,9 @@ describe('Total Price Calculation', () => {
     .contains("I'M HUNGRY") 
     .click();
     
-    cy.get('input[name="size"][value="Small"]').click(); 
-    cy.get('select[name="dough"]').select('Thin'); 
-    cy.get('select[name="crust"]').select('Garlic'); 
+    cy.get('input[name="size"][value="XLarge"]').click(); 
+    cy.get('select[name="dough"]').select('Medium'); 
+    cy.get('select[name="crust"]').select('Chili Garlic'); 
 
     const toppings = ["Pepperoni", "BBQ Chicken", "Corn", "Garlic", "Pineapple", "Sausage", "Onion"];
     toppings.forEach(topping => {
@@ -120,5 +117,9 @@ describe('Total Price Calculation', () => {
 
     cy.get('.grand-total').should('have.text', 'Grand Total: $380');
   });
-});
+})
+
+
+
+  
 

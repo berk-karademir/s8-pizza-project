@@ -244,25 +244,26 @@ span {
     background-image: url(/Assets/Iteration-1-assets/home-banner.png);
     width: 100vw;
     height: 100vh;
-    padding-top: 2rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: start;
+    
     h1 {
         font-family:"Londrina Solid";
         color: var(--flat-white);
         letter-spacing: 2px;
-        padding-bottom: 2rem;
+        padding: 2rem;
         font-size: 3rem;
     }
+    
     p {
         font-family: "Roboto Condensed";
         color: var(--flat-white);
         font-weight: 300;
-        font-size: 6rem;
-        line-height: 7rem;
+        font-size: 5em;
+        line-height: 6rem;
     }
 
     button {
