@@ -236,7 +236,7 @@ span {
    display: flex;
    flex-direction: column;
    align-items: center;
-   border-t: 0.1px solid var(--primary-gray);
+   border-top: 1px solid var(--primary-gray);
 }
     /* ------ DESKTOP DEVICES ------ */
 
