@@ -75,7 +75,7 @@ export default function Order({ setOrderStatus }) {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    axios.put('https://reqres.in/api/pizza', formData)
+    axios.post('https://reqres.in/api/pizza', formData)
       .then((response) => {
         console.log('Form submitted successfully:', response);
         setOrderStatus('success');
